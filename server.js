@@ -5,6 +5,8 @@ import routers from './routes/routes.js';
 import cors from 'cors'
 configDotenv();
 
+const PORT = process.env.PORT || 6010;
+
 const app = express()
 
 // mongodb
@@ -14,6 +16,6 @@ app.use(express.json());
 app.use(cors())
 app.use('/api', routers)
 
-app.listen(process.env.PORT, () => {
+app.listen(PORT, () => {
   console.log('Server is running');
 })
